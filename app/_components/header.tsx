@@ -4,7 +4,7 @@ import { MenuIcon } from "lucide-react";
 
 export function Header() {
   return (
-    <div className="flex justify-between px-5 pt-6">
+    <header className="flex justify-between px-5 pt-6">
       <Image src="/logo.png" alt="logo fsw foods" height={30} width={100} />
       <Button
         size="icon"
@@ -13,6 +13,6 @@ export function Header() {
       >
         <MenuIcon />
       </Button>
-    </div>
+    </header>
   );
 }
