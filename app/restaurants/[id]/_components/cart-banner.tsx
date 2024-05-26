@@ -43,7 +43,6 @@ export function CartBanner({ restaurant }: CartBannerProps) {
             </span>
           </h3>
         </div>
-        {/* BOTÃO */}
 
         <Button onClick={() => setIsCartOpen(true)}>Ver sacola</Button>
 
@@ -53,7 +52,7 @@ export function CartBanner({ restaurant }: CartBannerProps) {
               <SheetTitle className="text-left">Sacola</SheetTitle>
             </SheetHeader>
 
-            <Cart />
+            <Cart setIsOpen={setIsCartOpen} />
           </SheetContent>
         </Sheet>
       </div>
