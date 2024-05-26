@@ -52,6 +52,7 @@ export function ProductDetails({
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isConfirmationDialogOpen, setIsConfirmationDialogOpen] =
     useState(false);
+
   const { addProductToCart, products } = useContext(CartContext);
 
   function addToCart({ emptyCart }: { emptyCart?: boolean }) {
