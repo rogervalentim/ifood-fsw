@@ -56,7 +56,7 @@ export function ProductDetails({
   const { addProductToCart, products } = useContext(CartContext);
 
   function addToCart({ emptyCart }: { emptyCart?: boolean }) {
-    addProductToCart({ product, quantity, emptyCart });
+    addProductToCart({ product: { ...product, quantity }, emptyCart });
     setIsCartOpen(true);
   }
 

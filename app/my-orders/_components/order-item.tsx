@@ -40,7 +40,7 @@ const getOrderStatusLabel = (status: OrderStatus) => {
   }
 };
 
-export function OrderItem ({ order }: OrderItemProps) {
+export function OrderItem({ order }: OrderItemProps) {
   const { addProductToCart } = useContext(CartContext);
 
   const router = useRouter();
@@ -48,8 +48,11 @@ export function OrderItem ({ order }: OrderItemProps) {
   const handleRedoOrderClick = () => {
     for (const orderProduct of order.products) {
       addProductToCart({
-        product: { ...orderProduct.product, restaurant: order.restaurant },
-        quantity: orderProduct.quantity,
+        product: {
+          ...orderProduct.product,
+          restaurant: order.restaurant,
+          quantity: orderProduct.quantity,
+        },
       });
     }
 
@@ -127,5 +130,4 @@ export function OrderItem ({ order }: OrderItemProps) {
       </CardContent>
     </Card>
   );
-};
-
+}
