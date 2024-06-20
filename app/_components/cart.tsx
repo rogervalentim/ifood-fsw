@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../_context/cart";
-import { CartItem } from "./cart-item";
 import { Card, CardContent } from "./ui/card";
 import { formatCurrency } from "../_helpers/price";
 import { Separator } from "./ui/separator";
@@ -21,6 +20,7 @@ import {
 } from "./ui/alert-dialog";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import CartItem from "./cart-item";
 
 interface CartProps {
   // eslint-disable-next-line no-unused-vars
