@@ -12,7 +12,7 @@ export async function RestaurantList() {
   });
 
   return (
-    <section className="flex overflow-x-scroll px-5 lg:gap-5 [&::-webkit-scrollbar]:hidden">
+    <section className="flex gap-4 overflow-x-scroll px-5 lg:gap-5 [&::-webkit-scrollbar]:hidden">
       {restaurants.map((restaurant) => (
         <RestaurantItem
           key={restaurant.id}

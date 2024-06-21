@@ -42,9 +42,14 @@ export function RestaurantItem({
     }
   };
   return (
-    <div className={cn("min-w-[266px] max-w-[266px]", className)}>
+    <div
+      className={cn(
+        "min-w-[266px] max-w-[266px] lg:min-w-[381px] lg:max-w-[381px]",
+        className,
+      )}
+    >
       <div className="w-full space-y-3">
-        <div className="relative h-[136px] w-full">
+        <div className="relative h-[136px] w-full lg:h-[165px]">
           <Link href={`/restaurants/${restaurant.id}`}>
             <Image
               src={restaurant.imageUrl}

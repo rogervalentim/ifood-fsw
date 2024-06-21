@@ -70,7 +70,7 @@ export default async function Home() {
             você.
           </p>
 
-          <div className="mt-8 flex h-[88px] w-[658px] items-center justify-center rounded-md bg-white">
+          <div className="mt-8 flex h-[88px] w-[658px] items-center justify-center rounded-lg bg-white">
             <Search />
           </div>
         </div>
@@ -117,7 +117,7 @@ export default async function Home() {
         <ProductList products={products} />
       </div>
 
-      <div className="flex gap-4 px-32 pt-10">
+      <div className="hidden gap-4 px-32 pt-10 lg:flex">
         <div>
           <Link href={`/categories/${pizzasCategory?.id}/products`}>
             <PromoBanner
