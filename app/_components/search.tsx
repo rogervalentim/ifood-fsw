@@ -25,14 +25,17 @@ export function Search() {
   };
 
   return (
-    <form className="flex gap-2" onSubmit={handleSearchSubmit}>
+    <form className="flex gap-2 lg:gap-0" onSubmit={handleSearchSubmit}>
       <Input
         placeholder="Buscar restaurantes"
-        className="border-none"
+        className="border-none lg:w-[570px] lg:rounded lg:rounded-l-md"
         onChange={handleChange}
         value={search}
       />
-      <Button size="icon">
+      <Button
+        size="icon"
+        className="lg:rounded lg:rounded-r-md lg:bg-[#FFB100]"
+      >
         <SearchIcon size={20} />
       </Button>
     </form>

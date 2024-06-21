@@ -30,8 +30,8 @@ export function Header() {
   const handleSignOutClick = () => signOut();
 
   return (
-    <header className="flex justify-between px-5 pt-6">
-      <div className="relative h-[30px] w-[100px]">
+    <header className="flex  justify-between px-5 pt-6 lg:px-32 lg:pt-5">
+      <div className="relative h-[30px] w-[100px] ">
         <Link href="/">
           <Image
             src="/logo.png"
