@@ -29,8 +29,7 @@ export function CartBanner({ restaurant }: CartBannerProps) {
 
   return (
     <div className="fixed bottom-0 left-0 z-50 w-full border-t border-solid border-muted bg-white p-5 pt-3 shadow-md">
-      <div className="flex items-center justify-between">
-        {/* PREÇO */}
+      <div className="flex items-center justify-between lg:justify-start lg:gap-12 lg:px-32">
         <div>
           <span className="text-xs text-muted-foreground">
             Total sem entrega

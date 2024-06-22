@@ -28,7 +28,7 @@ import {
   SheetTrigger,
 } from "@/app/_components/ui/sheet";
 
-export function Header() {
+export function HeaderWeb() {
   const { data } = useSession();
 
   const handleSignInClick = () => signIn();
@@ -36,7 +36,7 @@ export function Header() {
   const handleSignOutClick = () => signOut();
 
   return (
-    <header className="hidden h-20 justify-between border-b px-5 pt-6 lg:flex lg:px-32 lg:pt-5">
+    <header className="hidden h-20 items-center justify-between border-b px-5 pt-6 lg:flex lg:px-32 lg:pt-5">
       <div className="relative h-[30px] w-[100px] ">
         <Link href="/">
           <Image

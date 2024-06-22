@@ -2,6 +2,7 @@ import { db } from "@/app/_lib/prisma";
 import { notFound } from "next/navigation";
 import { ProductImage } from "./_components/product-image";
 import { ProductDetails } from "./_components/product-details";
+import { HeaderWeb } from "@/app/_components/header-web";
 
 interface ProductPageProps {
   params: {
@@ -39,6 +40,7 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
 
   return (
     <div>
+      <HeaderWeb />
       <ProductImage product={product} />
 
       <ProductDetails product={product} complementaryProducts={juices} />

@@ -18,7 +18,7 @@ export function ProductImage({ product }: ProductImageProps) {
   }
 
   return (
-    <div className="relative h-[360px] w-full">
+    <div className="relative h-[360px] w-full lg:hidden">
       <Image
         src={product?.imageUrl}
         alt={product.name}

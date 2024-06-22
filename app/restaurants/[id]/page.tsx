@@ -8,7 +8,7 @@ import { ProductList } from "@/app/_components/product-list";
 import { CartBanner } from "./_components/cart-banner";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/_lib/auth";
-import { Header } from "./_components/header";
+import { HeaderWeb } from "@/app/_components/header-web";
 
 interface RestaurantPageProps {
   params: {
@@ -70,7 +70,7 @@ export default async function RestaurantPage({
 
   return (
     <div>
-      <Header />
+      <HeaderWeb />
 
       <RestaurantImage
         restaurant={restaurant}
@@ -101,9 +101,9 @@ export default async function RestaurantPage({
               <h1 className="text-xl font-semibold">{restaurant.name}</h1>
             </div>
 
-            <div className="flex items-center gap-[3px] rounded-full bg-foreground px-2 py-[2px] text-white">
-              <StarIcon size={12} className="fill-yellow-400 text-yellow-400" />
-              <span className="text-xs font-semibold">5.0</span>
+            <div className="flex h-7 w-16 items-center gap-[3px] rounded-full bg-foreground px-2 py-[2px] text-white">
+              <StarIcon size={16} className="fill-yellow-400 text-yellow-400" />
+              <span className=" font-semibold">5.0</span>
             </div>
           </div>
 
@@ -170,13 +170,13 @@ export default async function RestaurantPage({
       </div>
 
       <div className="mt-6 space-y-4 lg:mt-10  lg:px-32">
-        <h2 className="px-5 font-semibold ">Mais Pedidos</h2>
+        <h2 className="px-5 font-semibold lg:px-0">Mais Pedidos</h2>
         <ProductList products={restaurant.products} />
       </div>
 
       {restaurant.categories.map((category) => (
         <div className="mt-6 space-y-4 lg:mt-10  lg:px-32" key={category.id}>
-          <h2 className="px-5 font-semibold  ">{category.name}</h2>
+          <h2 className="px-5 font-semibold lg:px-0 ">{category.name}</h2>
           <ProductList products={category.products} />
         </div>
       ))}
