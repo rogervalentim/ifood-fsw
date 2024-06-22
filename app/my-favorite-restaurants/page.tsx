@@ -2,8 +2,9 @@ import { getServerSession } from "next-auth";
 import { db } from "../_lib/prisma";
 import { authOptions } from "../_lib/auth";
 import { notFound } from "next/navigation";
-import { Header } from "../_components/header";
 import { RestaurantItem } from "../_components/restaurant-item";
+import { HeaderWeb } from "../_components/header-web";
+import { Header } from "../_components/header";
 
 export default async function MyFavoriteRestaurants() {
   const session = await getServerSession(authOptions);
@@ -23,10 +24,13 @@ export default async function MyFavoriteRestaurants() {
 
   return (
     <>
-      <Header />
-      <div className="px-5 py-6">
+      <div className="lg:hidden">
+        <Header />
+      </div>
+      <HeaderWeb />
+      <div className="px-5 py-6 lg:px-32">
         <h2 className="mb-6 text-lg font-semibold">Restaurantes Favoritos</h2>
-        <div className="flex w-full flex-col gap-6 px-5">
+        <div className="flex w-full flex-col gap-6 px-5 lg:grid lg:grid-cols-3 lg:gap-5  lg:px-0">
           {userFavoriteRestaurants.length > 0 ? (
             userFavoriteRestaurants.map(({ restaurant }) => (
               <RestaurantItem

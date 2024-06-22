@@ -2,8 +2,9 @@ import { getServerSession } from "next-auth";
 import { db } from "../_lib/prisma";
 import { authOptions } from "../_lib/auth";
 import { redirect } from "next/navigation";
-import { Header } from "../_components/header";
 import { OrderItem } from "./_components/order-item";
+import { HeaderWeb } from "../_components/header-web";
+import { Header } from "../_components/header";
 
 export default async function MyOrdersPage() {
   const session = await getServerSession(authOptions);
@@ -28,7 +29,11 @@ export default async function MyOrdersPage() {
 
   return (
     <>
-      <Header />
+      <div className="lg:hidden">
+        <Header />
+      </div>
+
+      <HeaderWeb />
 
       <div className="px-5 py-6  lg:px-32">
         <h2 className="pb-6 text-lg font-semibold">Meus Pedidos</h2>
