@@ -16,14 +16,17 @@ export default async function RecommendedRestaurants() {
   });
 
   const restaurants = await db.restaurant.findMany({});
+
+  const search = true;
+
   return (
     <>
-      <Header />
-      <div className="px-5 py-6">
+      <Header search={search} />
+      <div className="px-5 py-6 lg:px-32">
         <h2 className="mb-6 text-lg font-semibold">
           Restaurantes Recomendados
         </h2>
-        <div className="flex w-full flex-col gap-6 px-5">
+        <div className="flex w-full flex-col gap-6 px-5 lg:grid lg:grid-cols-3 lg:gap-5  lg:px-0">
           {restaurants.map((restaurant) => (
             <RestaurantItem
               key={restaurant.id}
