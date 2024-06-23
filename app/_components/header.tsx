@@ -40,8 +40,8 @@ export function Header({ search }: HeaderProps) {
     <header
       className={
         search
-          ? "h-20 items-center justify-between border-b px-5 pt-6 lg:flex lg:px-32 lg:pt-5"
-          : "flex justify-between px-5 pt-6 lg:px-32 lg:pt-5"
+          ? "flex h-20 items-center justify-between border-b px-5 pt-6 lg:flex lg:px-32 lg:pt-5"
+          : "flex items-center justify-between px-5 pt-6 lg:px-32 lg:pt-5"
       }
     >
       <div className="relative h-[30px] w-[100px] ">
@@ -55,7 +55,7 @@ export function Header({ search }: HeaderProps) {
         </Link>
       </div>
 
-      <div className="hidden lg:flex">{search && <Search />}</div>
+      <div className="hidden lg:block">{search && <Search />}</div>
 
       <Sheet>
         <SheetTrigger asChild>
