@@ -2,7 +2,7 @@ import { db } from "@/app/_lib/prisma";
 import { notFound } from "next/navigation";
 import { ProductImage } from "./_components/product-image";
 import { ProductDetails } from "./_components/product-details";
-import { HeaderWeb } from "@/app/_components/header-web";
+import { Header } from "@/app/_components/header";
 
 interface ProductPageProps {
   params: {
@@ -38,9 +38,13 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
     },
   });
 
+  const search = true;
+
   return (
     <div>
-      <HeaderWeb />
+      <div className="hidden lg:block">
+        <Header search={search} />
+      </div>
       <ProductImage product={product} />
 
       <ProductDetails product={product} complementaryProducts={juices} />

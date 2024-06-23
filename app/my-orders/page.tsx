@@ -3,7 +3,6 @@ import { db } from "../_lib/prisma";
 import { authOptions } from "../_lib/auth";
 import { redirect } from "next/navigation";
 import { OrderItem } from "./_components/order-item";
-import { HeaderWeb } from "../_components/header-web";
 import { Header } from "../_components/header";
 
 export default async function MyOrdersPage() {
@@ -27,13 +26,11 @@ export default async function MyOrdersPage() {
     },
   });
 
+  const search = true;
+
   return (
     <>
-      <div className="lg:hidden">
-        <Header />
-      </div>
-
-      <HeaderWeb />
+      <Header search={search} />
 
       <div className="px-5 py-6  lg:px-32">
         <h2 className="pb-6 text-lg font-semibold">Meus Pedidos</h2>

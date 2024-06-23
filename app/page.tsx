@@ -115,24 +115,23 @@ export default async function Home() {
           </Button>
         </div>
         <ProductList products={products} />
-      </div>
-
-      <div className="mt-10 hidden gap-4 px-32 lg:flex">
-        <div>
-          <Link href={`/categories/${pizzasCategory?.id}/products`}>
-            <PromoBanner
-              src="/promo-banner-01.png"
-              alt="Até 30% de desconto em pizzas!"
-            />
-          </Link>
-        </div>
-        <div>
-          <Link href={`/categories/${burguersCategory?.id}/products`}>
-            <PromoBanner
-              src="/promo-banner-02.png"
-              alt="A partir de R$17,90 em lanches"
-            />
-          </Link>
+        <div className="mt-10 hidden gap-4  lg:flex">
+          <div>
+            <Link href={`/categories/${pizzasCategory?.id}/products`}>
+              <PromoBanner
+                src="/promo-banner-01.png"
+                alt="Até 30% de desconto em pizzas!"
+              />
+            </Link>
+          </div>
+          <div>
+            <Link href={`/categories/${burguersCategory?.id}/products`}>
+              <PromoBanner
+                src="/promo-banner-02.png"
+                alt="A partir de R$17,90 em lanches"
+              />
+            </Link>
+          </div>
         </div>
       </div>
 

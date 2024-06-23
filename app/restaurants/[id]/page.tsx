@@ -8,7 +8,7 @@ import { ProductList } from "@/app/_components/product-list";
 import { CartBanner } from "./_components/cart-banner";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/_lib/auth";
-import { HeaderWeb } from "@/app/_components/header-web";
+import { Header } from "@/app/_components/header";
 
 interface RestaurantPageProps {
   params: {
@@ -68,9 +68,13 @@ export default async function RestaurantPage({
     },
   });
 
+  const search = true;
+
   return (
     <div>
-      <HeaderWeb />
+      <div className="hidden lg:block">
+        <Header search={search} />
+      </div>
 
       <RestaurantImage
         restaurant={restaurant}

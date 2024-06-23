@@ -21,8 +21,13 @@ import {
 } from "./ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
+import { Search } from "./search";
 
-export function Header() {
+interface HeaderProps {
+  search?: boolean;
+}
+
+export function Header({ search }: HeaderProps) {
   const { data } = useSession();
 
   const handleSignInClick = () => signIn();
@@ -30,7 +35,13 @@ export function Header() {
   const handleSignOutClick = () => signOut();
 
   return (
-    <header className="flex  justify-between px-5 pt-6 lg:px-32 lg:pt-5">
+    <header
+      className={
+        search
+          ? "h-20 items-center justify-between border-b px-5 pt-6 lg:flex lg:px-32 lg:pt-5"
+          : "flex justify-between px-5 pt-6 lg:px-32 lg:pt-5"
+      }
+    >
       <div className="relative h-[30px] w-[100px] ">
         <Link href="/">
           <Image
@@ -41,6 +52,8 @@ export function Header() {
           />
         </Link>
       </div>
+
+      <div className="hidden lg:flex">{search && <Search />}</div>
 
       <Sheet>
         <SheetTrigger asChild>
