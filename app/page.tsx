@@ -121,6 +121,7 @@ export default async function Home() {
               <PromoBanner
                 src="/promo-banner-01.png"
                 alt="Até 30% de desconto em pizzas!"
+                className="h-[215px] w-[582px]"
               />
             </Link>
           </div>
@@ -129,6 +130,7 @@ export default async function Home() {
               <PromoBanner
                 src="/promo-banner-02.png"
                 alt="A partir de R$17,90 em lanches"
+                className="h-[215px] w-[582px]"
               />
             </Link>
           </div>
