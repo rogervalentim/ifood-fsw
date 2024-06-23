@@ -22,6 +22,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
 import { Search } from "./search";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   search?: boolean;
@@ -29,6 +30,7 @@ interface HeaderProps {
 
 export function Header({ search }: HeaderProps) {
   const { data } = useSession();
+  const pathname = usePathname();
 
   const handleSignInClick = () => signIn();
 
@@ -105,12 +107,12 @@ export function Header({ search }: HeaderProps) {
           <div className="space-y-2">
             <Button
               variant="ghost"
-              className="w-full justify-start space-x-3 rounded-full text-sm font-normal"
+              className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/" ? "bg-primary text-white" : ""}`}
               asChild
             >
               <Link href="/">
                 <HomeIcon size={16} />
-                <span className="block"> Inicio</span>
+                <span className="block"> Início</span>
               </Link>
             </Button>
 
@@ -118,7 +120,7 @@ export function Header({ search }: HeaderProps) {
               <>
                 <Button
                   variant="ghost"
-                  className="w-full justify-start space-x-3 rounded-full text-sm font-normal"
+                  className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/my-orders" ? "bg-primary text-white" : ""}`}
                   asChild
                 >
                   <Link href="/my-orders">
@@ -129,12 +131,12 @@ export function Header({ search }: HeaderProps) {
 
                 <Button
                   variant="ghost"
-                  className="w-full justify-start space-x-3 rounded-full text-sm font-normal"
+                  className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/my-favorite-restaurants" ? "bg-primary text-white" : ""}`}
                   asChild
                 >
                   <Link href="/my-favorite-restaurants">
                     <HeartIcon size={16} />
-                    <span className="block">Restaurantes Favoritos</span>
+                    <span className="block"> Restaurantes Favoritos</span>
                   </Link>
                 </Button>
               </>
