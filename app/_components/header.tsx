@@ -5,10 +5,14 @@ import { Button } from "./ui/button";
 import {
   HeartIcon,
   HomeIcon,
+  IceCreamBowl,
   LogInIcon,
   LogOutIcon,
   MenuIcon,
+  CupSoda,
   ScrollTextIcon,
+  Pizza,
+  Utensils,
 } from "lucide-react";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -23,6 +27,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
 import { Search } from "./search";
 import { usePathname } from "next/navigation";
+import { BiSolidSushi } from "react-icons/bi";
+import { GiHamburger } from "react-icons/gi";
 
 interface HeaderProps {
   search?: boolean;
@@ -100,11 +106,11 @@ export function Header({ search }: HeaderProps) {
               </Button>
             </div>
           )}
-          <div className="py-6">
+          <div className="py-5">
             <Separator />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             <Button
               variant="ghost"
               className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/" ? "bg-primary text-white" : ""}`}
@@ -143,7 +149,80 @@ export function Header({ search }: HeaderProps) {
             )}
           </div>
 
-          <div className="py-6">
+          <div className="py-3">
+            <Separator />
+          </div>
+
+          <div className="space-y-1">
+            <>
+              <Button
+                variant="ghost"
+                className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/categories/413159dc-bc41-4fd9-bc63-1d9ab875e86d/products" ? "bg-primary text-white" : ""}`}
+                asChild
+              >
+                <Link href="/categories/413159dc-bc41-4fd9-bc63-1d9ab875e86d/products">
+                  <IceCreamBowl size={16} />
+                  <span className="block">Sobremesas</span>
+                </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/categories/41a8fdd5-f5b9-4eb7-adcf-e5bcf88b0c77/products" ? "bg-primary text-white" : ""}`}
+                asChild
+              >
+                <Link href="/categories/41a8fdd5-f5b9-4eb7-adcf-e5bcf88b0c77/products">
+                  <CupSoda size={16} />
+                  <span className="block">Sucos</span>
+                </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/categories/7cf5b235-2565-4c0e-ab75-1677dc39937a/products" ? "bg-primary text-white" : ""}`}
+                asChild
+              >
+                <Link href="/categories/7cf5b235-2565-4c0e-ab75-1677dc39937a/products">
+                  <GiHamburger size={16} />
+                  <span className="block">Hamburgúeres</span>
+                </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/categories/1313274c-263f-4a6e-8c16-5d8a5b87747b/products" ? "bg-primary text-white" : ""}`}
+                asChild
+              >
+                <Link href="/categories/1313274c-263f-4a6e-8c16-5d8a5b87747b/products">
+                  <Pizza size={16} />
+                  <span className="block">Pizzas</span>
+                </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/categories/b1c47e4d-5498-429b-b3a3-29fef3225d8b/products" ? "bg-primary text-white" : ""}`}
+                asChild
+              >
+                <Link href="/categories/b1c47e4d-5498-429b-b3a3-29fef3225d8b/products">
+                  <BiSolidSushi size={16} />
+                  <span className="block">Japonesa</span>
+                </Link>
+              </Button>
+              <Button
+                variant="ghost"
+                className={`w-full justify-start space-x-3 rounded-full text-sm font-normal ${pathname === "/categories/e34ef030-452b-4ca4-931b-6915adacb994/products" ? "bg-primary text-white" : ""}`}
+                asChild
+              >
+                <Link href="/categories/e34ef030-452b-4ca4-931b-6915adacb994/products">
+                  <Utensils size={16} />
+                  <span className="block">Brasileira</span>
+                </Link>
+              </Button>
+            </>
+          </div>
+
+          <div className="py-4">
             <Separator />
           </div>
 
