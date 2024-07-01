@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ifood
 
-## Getting Started
+## 💻 Deploy
 
-First, run the development server:
+<a href="https://ifood-fsw.vercel.app/">Clique aqui para ver o projeto</a>
+
+## 📝 Descrição
+
+Desenvolvi um sistema para gerenciar operações de um restaurante, incluindo funcionalidades para listar restaurantes, produtos, gerenciar pedidos, fazer pedidos e finalizar pedidos. O sistema também deve permitir a busca por restaurantes e um design inspirado no ifood.
+
+## 🔧 Instalação
+
+Instalação com npm
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone "https://github.com/rogervalentim/ifood-fsw.git"
+  cd fullstack-ifood
+  npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔌 Como Rodar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📊 Tecnologias e libs utilizadas
 
-## Learn More
+<ul>
+<li>Next.js</li>
+<li>next/auth</li>
+<li>Prisma</li>
+<li>Context API</li>
+<li>Tailwind Css</li>
+<li>Shadc UI</li>
+<li>Typescript</li>
+</ul>
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Imagem do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img src=".github/ifood.png" alt="imagem do github profile">
